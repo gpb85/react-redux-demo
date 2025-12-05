@@ -26,7 +26,7 @@ const icecreamSlice = createSlice({
       const qnt = action.payload;
       if (!qnt || qnt < 4) return;
 
-      const offer = qnt === 4 ? 2 : 3;
+      const offer = qnt > 3 && qnt < 6 ? 2 : qnt < 8 ? 3 : 4;
       state.numOfIcecreams -= offer;
     });
   },
